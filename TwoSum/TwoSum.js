@@ -18,14 +18,33 @@
 
 
 // Brute force solution.. need to refactor!
+// const twoSum = (nums, target) => {
+//     for(let i = 0; i < nums.length; i++){
+//         for(let j = 0; j < nums.length; j++){
+//             if(i !== j && nums[i] + nums[j] === target){
+//             return [[i],[j]].flat()
+//             }
+//         }
+//     }
+// };
+
+
+// Refactored 
 const twoSum = (nums, target) => {
+    let map = new Map()
+
     for(let i = 0; i < nums.length; i++){
-        for(let j = 0; j < nums.length; j++){
-            if(i !== j && nums[i] + nums[j] === target){
-            return [[i],[j]].flat()
-            }
+        let num1 = nums[i]
+        let num2 = target - nums[i]
+        if(map.has(num2)){
+            return [i, map.get(num2)]
         }
+        map.set(num1, i)
     }
-};
+
+    
+}
+
+
 
 twoSum([2,7,11,15],9)
