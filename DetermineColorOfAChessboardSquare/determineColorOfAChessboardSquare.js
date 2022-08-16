@@ -4,6 +4,9 @@
 
 // The coordinate will always represent a valid chessboard square. The coordinate will always have the letter first, and the number second.
 
+// Input: coordinates = "a1"
+// Output: false
+// Explanation: From the chessboard above, the square with coordinates "a1" is black, so return false.
 
 var squareIsWhite = function(coordinates) {
   const letter = coordinates.split('')[0]
